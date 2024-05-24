@@ -1,5 +1,24 @@
 <script setup>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.navigation__menu-button').addEventListener('click', function() {
+    const menuLinks = document.querySelector('.navigation__menu-links');
+    menuLinks.classList.toggle('active');
 
+    const menubg = document.querySelector('.navigation__menu-back');
+    menubg.classList.toggle('active');
+   
+    const button = this;
+    if (button.src.includes('burger.svg')) {
+       button.src = 'x.svg';
+       document.body.style.overflow = "hidden"
+    } else {
+       button.src = 'burger.svg';
+       document.body.style.overflow = ""
+    }
+    button.classList.toggle('active');
+   });
+});
+  
 </script>
 
 <template>
